@@ -1,0 +1,13 @@
+#cloud-config
+hostname: k8s_master.localdomain
+timezone: "Asia/Tokyo"
+user: user
+password: testPass
+chpasswd: { expire: True }
+ssh_pwauth: True
+
+disk_setup:
+  /dev/vda:
+    table_type: 'mbr'
+    layout:
+      - [100,82]
